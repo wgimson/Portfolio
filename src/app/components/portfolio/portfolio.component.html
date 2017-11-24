@@ -1,0 +1,11 @@
+<h3>Portfolio</h3>
+<div class="ui-g">
+  <div class="ui-g-12 ui-md-6 ui-lg-3" *ngFor="let proj of projects | async">
+    <div>
+      {{ proj.name }}
+    </div>
+    <div>
+      <img class="repo-thumb" [src]="proj.owner.avatar_url">
+    </div>
+  </div>
+</div>
