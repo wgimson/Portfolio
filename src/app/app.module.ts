@@ -4,8 +4,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
 
-import { MenubarModule, MenuItem } from 'primeng/primeng';
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
@@ -14,6 +12,8 @@ import { BlogComponent } from './components/blog/blog.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 import { GithubService } from './providers/github.service';
+
+import { RepoFilterPipe } from './pipes/repo-filter.pipe';
 
 // STATIC CONSTANTS
 const appRoutes: Routes = [
@@ -52,7 +52,8 @@ const appRoutes: Routes = [
     AboutComponent,
     ContactComponent,
     BlogComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    RepoFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -62,7 +63,6 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } // <-- only for debugging
     ),
-    //MenubarModule
   ],
   providers: [GithubService],
   bootstrap: [AppComponent]

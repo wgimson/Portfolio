@@ -2,16 +2,23 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 
 import { Observable } from 'rxjs/Rx';
+import 'rxjs/add/operator/filter';
 
 @Injectable()
 export class GithubService {
-  repos: any[];
-  callRoot = 'https://api.github.com/users/wgimson/';
+  callRoot = 'https://api.github.com/';
 
-  constructor(private http: Http) { }
+  constructor(private http: Http) {}
 
-  getProjects(): Observable<any[]> {
-    const _callPath = this.callRoot + 'repos';
-    return this.http.get(_callPath).map((res: Response) => res.json());
+  public getProjects(): Observable<any> {
+    const _callPath = this.callRoot + 'users/wgimson/repos?sort="created"';
+    return this.http.get(_callPath)
+                    .map((res) => res.json());
+  }
+
+  public getProjectByName(name: string) {
+    const _callPath = this.callRoot + 'repos/wgimson/' + name;
+    return this.http.get(_callPath)
+                    .map((res) => res.json());
   }
 }
