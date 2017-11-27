@@ -8,7 +8,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 })
 export class ModalComponent implements OnInit {
   title: string;
-  list: any[] = [];
+  body: string;
 
   constructor(public bsModalRef: BsModalRef) {}
 

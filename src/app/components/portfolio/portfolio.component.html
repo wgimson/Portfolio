@@ -1,7 +1,7 @@
 <div class="light-background">
   <h3 class="text-default">Portfolio</h3>
   <div>
-    <div *ngFor="let proj of projects | async" (click)="openModalWithComponent()">
+    <div *ngFor="let proj of projects | async" (click)="showReadmeInModal(proj.name)">
       <div class="text-small">
         {{ proj.name }}
       </div>
