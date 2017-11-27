@@ -32,6 +32,8 @@
 
 .modal-content {
   position: fixed !important;
-  bottom: -441px !important;
-  right: -144px !important;
+  max-height: 650px !important;
+  overflow-x: auto !important;
+  top: auto !important;
+  left: auto !important;
 }
