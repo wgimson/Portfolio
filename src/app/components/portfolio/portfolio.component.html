@@ -1,11 +1,9 @@
 <div class="light-background">
   <h3 class="text-default">Portfolio</h3>
-  <div>
-    <div *ngFor="let proj of projects | async">
-      <div class="text-small">
-        {{ proj.name }}
-      </div>
+  <div class="row">
+    <div class="col-4" *ngFor="let proj of projects | async; let i = index;">
       <div>
+        <span class="text-small">{{ proj.name }}</span><br />
         <img class="repo-thumb" [src]="proj.owner.avatar_url" (click)="showReadmeInModal(proj.name)">
       </div>
     </div>

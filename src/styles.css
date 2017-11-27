@@ -37,3 +37,7 @@
   top: auto !important;
   left: auto !important;
 }
+
+.col-4 {
+  margin-bottom: 20px;
+}
