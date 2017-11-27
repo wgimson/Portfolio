@@ -27,6 +27,7 @@ export class PortfolioComponent implements OnInit {
   projects: Observable<any[]>;
   project: any = {};
   readme = '';
+  projectName: string;
   repos = ['St-Boniface', 'Stockify', 'Treeme', 'MedBud', 'TrailBuddy2'];
 
   constructor(
@@ -41,39 +42,25 @@ export class PortfolioComponent implements OnInit {
     });
   }
 
-  getReadmeDownloadPath(repoName) {
+  showReadmeInModal(repoName) {
     this.githubService.getProjectReadme(repoName).subscribe(readme => {
-      this.project.readme = readme;
-      const _downloadUrl = this.project.readme.download_url;
-      debugger;
+      this.projectName = repoName;
+      const _downloadUrl = readme.download_url;
       this.downloadReadme(_downloadUrl);
     });
   }
 
-  downloadReadme(url) {
+  private downloadReadme(url) {
     this.githubService.downloadFile(url).subscribe(readme => {
-      debugger;
       this.readme = readme;
+      this.modalRef = this.modalService.show(ModalComponent);
+      this.modalRef.content.title = this.projectName;
+      this.modalRef.content.body = readme;
     });
   }
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
-  }
-
-  openModalWithComponent() {
-    const list = [
-      'Open a modal with component',
-      'Pass your data',
-      'Do something else',
-      '...'
-    ];
-    this.modalRef = this.modalService.show(ModalComponent);
-    this.modalRef.content.title = 'Modal with component';
-    this.modalRef.content.list = list;
-    setTimeout(() => {
-      list.push('PROFIT!!!');
-    }, 2000);
   }
 
   ngOnInit() {

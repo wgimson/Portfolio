@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { MarkdownToHtmlModule } from 'ng2-markdown-to-html';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -65,6 +66,7 @@ const appRoutes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     HttpModule,
+    MarkdownToHtmlModule.forRoot(),
     ModalModule.forRoot(),
     RouterModule.forRoot(
       appRoutes,

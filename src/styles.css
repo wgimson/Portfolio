@@ -29,3 +29,9 @@
 .dark-background {
   background: #eeeeef;
 }
+
+.modal-content {
+  position: fixed !important;
+  bottom: -441px !important;
+  right: -144px !important;
+}
