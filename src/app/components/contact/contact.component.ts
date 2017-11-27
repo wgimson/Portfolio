@@ -15,6 +15,10 @@ export class ContactComponent implements OnInit {
     console.log('contact');
   }
 
+  openContactForm() {
+    alert('this is a contact form');
+  }
+
   ngOnInit() {
   }
 
