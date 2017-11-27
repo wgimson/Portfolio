@@ -15,7 +15,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ModalComponent } from './components/modal/modal.component';
-
+import { ModalFormComponent } from './components/modal-form/modal-form.component';
 
 import { GithubService } from './providers/github.service';
 
@@ -60,7 +60,8 @@ const appRoutes: Routes = [
     BlogComponent,
     PortfolioComponent,
     RepoFilterPipe,
-    ModalComponent
+    ModalComponent,
+    ModalFormComponent
   ],
   imports: [
     BrowserModule,
@@ -73,9 +74,13 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- only for debugging
     ),
   ],
-  providers: [GithubService, BsModalRef],
+  providers: [
+    GithubService,
+    BsModalRef
+  ],
   entryComponents: [
-    ModalComponent
+    ModalComponent,
+    ModalFormComponent
   ],
   bootstrap: [AppComponent]
 })

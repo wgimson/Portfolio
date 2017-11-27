@@ -59,9 +59,9 @@ export class PortfolioComponent implements OnInit {
     });
   }
 
-  openModal(template: TemplateRef<any>) {
+/*   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
-  }
+  } */
 
   ngOnInit() {
     this.projects = this.githubService
