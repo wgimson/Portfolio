@@ -10,7 +10,9 @@ export class ModalComponent implements OnInit {
   title: string;
   body: string;
 
-  constructor(public bsModalRef: BsModalRef) {}
+  constructor(
+    private bsModalRef: BsModalRef
+  ) {}
 
 
   ngOnInit() {
