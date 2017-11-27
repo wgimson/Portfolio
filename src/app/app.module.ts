@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { AlertModule } from 'ngx-bootstrap';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -13,6 +13,8 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { ModalComponent } from './components/modal/modal.component';
+
 
 import { GithubService } from './providers/github.service';
 
@@ -56,20 +58,23 @@ const appRoutes: Routes = [
     ContactComponent,
     BlogComponent,
     PortfolioComponent,
-    RepoFilterPipe
+    RepoFilterPipe,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpModule,
-    AlertModule.forRoot(),
     ModalModule.forRoot(),
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- only for debugging
     ),
   ],
-  providers: [GithubService],
+  providers: [GithubService, BsModalRef],
+  entryComponents: [
+    ModalComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
