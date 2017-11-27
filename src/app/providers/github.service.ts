@@ -21,4 +21,16 @@ export class GithubService {
     return this.http.get(_callPath)
                     .map((res) => res.json());
   }
+
+  public getProjectReadme(name: string) {
+    const _callPath = this.callRoot + 'repos/wgimson/' + name + '/readme';
+    return this.http.get(_callPath)
+                    .map((res) => res.json());
+  }
+
+  public downloadFile(path: string) {
+    return this.http.get(path)
+    // THIS IS HOW YOU READ AN Observable<Response> RAW
+                    .map((res) => res.text());
+  }
 }
