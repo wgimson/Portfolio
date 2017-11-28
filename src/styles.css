@@ -36,6 +36,7 @@
   overflow-x: auto !important;
   top: auto !important;
   left: auto !important;
+  width: 100%;
 }
 
 .col-4 {
