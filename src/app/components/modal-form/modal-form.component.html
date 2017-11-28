@@ -5,18 +5,35 @@
   </button>
 </div>
 <div class="modal-body">
-  <form>
+  <form #projectForm="ngForm" name="projectForm">
+    {{diagnostic}}
     <div class="form-group">
       <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" required>
+      <input placeholder="Name" type="text" class="form-control" name="name" [(ngModel)]="form.name" required>
+      <small id="emaiNamelHelp" class="form-text text-muted">We'll never share your name or email with anyone else.</small>
     </div>
 
     <div class="form-group">
-      <label for="alterEgo">Alter Ego</label>
-      <input type="text" class="form-control" id="alterEgo">
+      <label for="email">Email Address</label>
+      <input placeholder="Email" type="text" class="form-control" name="email" [(ngModel)]="form.email" required>
     </div>
 
-    <button type="submit" class="btn btn-success">Submit</button>
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input placeholder="Phone Number" type="text" class="form-control" [(ngModel)]="form.phone" name="phone">
+    </div>
+
+    <div class="form-group">
+      <label for="website">Website</label>
+      <input placeholder="Website URL" type="text" class="form-control" name="website" [(ngModel)]="form.website">
+    </div>
+
+    <div class="form-group">
+      <label for="description">Project</label>
+      <textarea class="form-control" name="description" placeholder="Tell me about your project..." [(ngModel)]="form.description" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success" (click)="submitForm()" >Submit</button>
   </form>
 </div>
 <div class="modal-footer">
