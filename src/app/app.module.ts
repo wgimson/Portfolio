@@ -17,6 +17,7 @@ import { BlogComponent } from './components/blog/blog.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ModalFormComponent } from './components/modal-form/modal-form.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 import { GithubService } from './providers/github.service';
 
@@ -62,7 +63,8 @@ const appRoutes: Routes = [
     PortfolioComponent,
     RepoFilterPipe,
     ModalComponent,
-    ModalFormComponent
+    ModalFormComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

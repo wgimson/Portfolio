@@ -1,33 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~bootstrap/dist/css/bootstrap.min.css";
 
 .text-default {
   font-size: 3.2rem;
-  margin: 10rem 0 2.0rem;
   line-height: 1.4;
   font-weight: 700;
   text-align: center;
   color: #252a30;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .text-small {
   font-size: 2.1rem;
-  margin: 10rem 0 2.0rem;
+  margin: 10rem 0 2rem;
   line-height: 0.5;
   font-weight: 400;
   text-align: center;
   color: #252a30;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .light-background {
-  background: #fff
+  background: #fff;
 }
-
 
 .dark-background {
   background: #eeeeef;
+}
+
+.black-background {
+  background: #252a30;
 }
 
 .modal-content {
@@ -41,4 +43,20 @@
 
 .col-4 {
   margin-bottom: 20px;
+}
+
+.social-links {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  margin: 0 4px;
+  height: 36px;
+  width: 36px;
+  font-size: 1.6rem;
+  line-height: 2.3;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  margin-top: 15px;
 }
