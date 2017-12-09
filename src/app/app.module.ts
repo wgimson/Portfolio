@@ -22,6 +22,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { GithubService } from './providers/github.service';
 
 import { RepoFilterPipe } from './pipes/repo-filter.pipe';
+import { PostComponent } from './components/post-component/post-component.component';
 
 // STATIC CONSTANTS
 const appRoutes: Routes = [
@@ -46,8 +47,12 @@ const appRoutes: Routes = [
     component: AboutComponent,
     data: { title: 'About' }
   },
+  {
+    path: 'posts',
+    component: PostComponent
+  },
   { path: '',
-    redirectTo: '/home',
+    redirectTo: '/posts',
     pathMatch: 'full'
   },
   { path: '**', component: HomeComponent }
@@ -64,7 +69,8 @@ const appRoutes: Routes = [
     RepoFilterPipe,
     ModalComponent,
     ModalFormComponent,
-    FooterComponent
+    FooterComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
