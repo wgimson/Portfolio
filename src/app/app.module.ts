@@ -18,11 +18,12 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ModalFormComponent } from './components/modal-form/modal-form.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PostsComponent } from './components/posts/posts.component';
 
 import { GithubService } from './providers/github.service';
+import { PostsService } from './providers/posts.service';
 
 import { RepoFilterPipe } from './pipes/repo-filter.pipe';
-import { PostComponent } from './components/post-component/post-component.component';
 
 // STATIC CONSTANTS
 const appRoutes: Routes = [
@@ -49,7 +50,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'posts',
-    component: PostComponent
+    component: PostsComponent
   },
   { path: '',
     redirectTo: '/posts',
@@ -70,7 +71,7 @@ const appRoutes: Routes = [
     ModalComponent,
     ModalFormComponent,
     FooterComponent,
-    PostComponent
+    PostsComponent
   ],
   imports: [
     BrowserModule,
@@ -86,7 +87,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     GithubService,
-    BsModalRef
+    BsModalRef,
+    PostsService
   ],
   entryComponents: [
     ModalComponent,
