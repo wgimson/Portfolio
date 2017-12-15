@@ -5,11 +5,14 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class PostsService {
+  constructor(private http: Http) {}
 
-  constructor(private http: Http) { }
-
+  // Get all posts from the API
   getAllPosts() {
     return this.http.get('/api/posts')
-               .map(res => res.json());
+               .map(res => {
+                 debugger;
+                 return res.json();
+               });
   }
 }

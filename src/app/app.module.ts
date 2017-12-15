@@ -18,7 +18,7 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ModalFormComponent } from './components/modal-form/modal-form.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { PostsComponent } from './components/posts/posts.component';
+import { PostComponent } from './components/post/post.component';
 
 import { GithubService } from './providers/github.service';
 import { PostsService } from './providers/posts.service';
