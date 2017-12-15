@@ -50,7 +50,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'posts',
-    component: PostComponent
+    component: PostsComponent
   },
   { path: '',
     redirectTo: '/posts',
@@ -71,7 +71,7 @@ const appRoutes: Routes = [
     ModalComponent,
     ModalFormComponent,
     FooterComponent,
-    PostComponent
+    PostsComponent
   ],
   imports: [
     BrowserModule,
