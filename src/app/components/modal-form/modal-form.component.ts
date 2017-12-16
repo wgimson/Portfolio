@@ -15,7 +15,7 @@ export class ProjectForm {
 @Component({
   selector: "app-modal-form",
   templateUrl: "./modal-form.component.html",
-  styleUrls: ["./modal-form.component.css"]
+  styleUrls: ["./modal-form.component.scss"]
 })
 export class ModalFormComponent implements OnInit {
   public form = new ProjectForm('', '', '', '', '');
@@ -25,7 +25,6 @@ export class ModalFormComponent implements OnInit {
   ) {}
 
   private submitForm() {
-    debugger;
     console.log("hello");
   }
 
