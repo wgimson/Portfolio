@@ -9,6 +9,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { MarkdownToHtmlModule } from 'ng2-markdown-to-html';
 
+//import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
@@ -53,7 +56,7 @@ const appRoutes: Routes = [
     component: PostComponent
   },
   { path: '',
-    redirectTo: '/posts',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
   { path: '**', component: HomeComponent }
@@ -75,6 +78,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    //AngularFireModule.initializeApp(environment.firebase),
     BrowserAnimationsModule,
     HttpModule,
     FormsModule,
@@ -88,7 +92,8 @@ const appRoutes: Routes = [
   providers: [
     GithubService,
     BsModalRef,
-    PostsService
+    PostsService,
+    //AngularFireModule
   ],
   entryComponents: [
     ModalComponent,
